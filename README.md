@@ -8,6 +8,8 @@ Framework written in Python to collect and match open-source air quality and tra
 
 
 -   'Data_collector.py' gathers emission and congestion data simultaneously through two different API endpoints. 
+-   These endpoints require a personal API token. The tokens can be acquired through the following links: https://aqicn.org/data-platform/token/ and https://developer.tomtom.com/traffic-api/documentation/product-information/introduction 
+-   These personal API tokens need to be inserted in the code. 
 -   Data collection will be initialized by running 'Data_collector.py'. Data is collected every half hour. 
 -   It is recommended to run in on a remote machine, since code has to run for longer periods of time. 
 
