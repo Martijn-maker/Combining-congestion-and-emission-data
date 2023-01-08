@@ -25,6 +25,7 @@ lower_bound = '28.434276,77.768612'
 
 
 def choose_city_by_coordinates(upper_bound, lower_bound):
+    ### insert Your_persoonal_token below 
     url = 'https://api.waqi.info/map/bounds?token='Your_persoonal_token'&latlng='
     response_city_stations = requests.get(url+str(upper_bound)+','+str(lower_bound))
     city_stations = json.loads(response_city_stations.content)
@@ -37,6 +38,7 @@ def choose_city_by_coordinates(upper_bound, lower_bound):
 
 def get_geo_coordinates_per_station():
     url_geo_part1 = 'https://api.waqi.info/feed/@'
+    ### insert Your_persoonal_token below 
     url_geo_part2 = '/?token='Your_personal_token'
     city_stations2 = choose_city_by_coordinates(upper_bound, lower_bound)
     df = pd.DataFrame([])
