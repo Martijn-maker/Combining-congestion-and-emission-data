@@ -14,7 +14,7 @@ emission_file   = 'emission_Data.csv'
 
 
 
-#New Delhi
+#New Delhi city area coordinates 
 upper_bound = '28.973265,76.649430'
 lower_bound = '28.434276,77.768612'
 
@@ -25,7 +25,7 @@ lower_bound = '28.434276,77.768612'
 
 
 def choose_city_by_coordinates(upper_bound, lower_bound):
-    url = 'https://api.waqi.info/map/bounds?token=6c2f4b6dbe6b2a49226f6969be2dbaa92a187cf8&latlng='
+    url = 'https://api.waqi.info/map/bounds?token='Your_persoonal_token'&latlng='
     response_city_stations = requests.get(url+str(upper_bound)+','+str(lower_bound))
     city_stations = json.loads(response_city_stations.content)
     city_stations = city_stations['data']
@@ -37,7 +37,7 @@ def choose_city_by_coordinates(upper_bound, lower_bound):
 
 def get_geo_coordinates_per_station():
     url_geo_part1 = 'https://api.waqi.info/feed/@'
-    url_geo_part2 = '/?token=6c2f4b6dbe6b2a49226f6969be2dbaa92a187cf8'
+    url_geo_part2 = '/?token='Your_personal_token'
     city_stations2 = choose_city_by_coordinates(upper_bound, lower_bound)
     df = pd.DataFrame([])
     df2 = pd.DataFrame([])
